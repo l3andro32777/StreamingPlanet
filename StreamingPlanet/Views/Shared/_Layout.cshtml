@@ -11,9 +11,9 @@
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light @*bg-black*@ border-bottom box-shadow mb-3" id="black-back">
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light @*bg-black*@ @*border-bottom*@ @*box-shadow mb-3*@" id="black-back">
             <div class="container-fluid">
-                <img src="images/logo.png" alt="Streaming Planet" height="37px" width="37px">
+                <img src="/images/logo.png" alt="Streaming Planet" height="37px" width="37px">
                 <a class="navbar-brand text-light" asp-area="" asp-controller="Home" asp-action="Index" id="name">Streaming Planet</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
@@ -33,7 +33,7 @@
             </div>
         </nav>
     </header>
-    <div class="container">
+    <div @*class="container"*@>
         <main role="main" class="pb-3">
             @RenderBody()
         </main>

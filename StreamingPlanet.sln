@@ -3,7 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.4.33103.184
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StreamingPlanet", "StreamingPlanet\StreamingPlanet.csproj", "{4AF14E16-B125-4BD6-8E05-27E74466E949}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StreamingPlanet", "StreamingPlanet\StreamingPlanet.csproj", "{4AF14E16-B125-4BD6-8E05-27E74466E949}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Console_StreamingPlanet", "Console_StreamingPlanet\Console_StreamingPlanet.csproj", "{6AC07768-86BF-4DDF-A123-3FB8D902DBE9}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StreamingPlanetTest", "StreamingPlanetTest\StreamingPlanetTest.csproj", "{4496E0E1-76BA-4F15-9F0F-26C167D5ED85}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +19,14 @@ Global
 		{4AF14E16-B125-4BD6-8E05-27E74466E949}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4AF14E16-B125-4BD6-8E05-27E74466E949}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4AF14E16-B125-4BD6-8E05-27E74466E949}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6AC07768-86BF-4DDF-A123-3FB8D902DBE9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6AC07768-86BF-4DDF-A123-3FB8D902DBE9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6AC07768-86BF-4DDF-A123-3FB8D902DBE9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6AC07768-86BF-4DDF-A123-3FB8D902DBE9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4496E0E1-76BA-4F15-9F0F-26C167D5ED85}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4496E0E1-76BA-4F15-9F0F-26C167D5ED85}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4496E0E1-76BA-4F15-9F0F-26C167D5ED85}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4496E0E1-76BA-4F15-9F0F-26C167D5ED85}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

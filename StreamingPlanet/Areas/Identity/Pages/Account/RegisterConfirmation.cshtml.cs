@@ -45,13 +45,14 @@ namespace StreamingPlanet.Areas.Identity.Pages.Account
         /// </summary>
         public string EmailConfirmationUrl { get; set; }
 
-        public async Task<IActionResult> OnGetAsync(string email, string returnUrl = null)
+        public async Task<IActionResult> OnGetAsync(string email, string returnUrl = null, string callbackUrl = null)
         {
             if (email == null)
             {
                 return RedirectToPage("/Index");
             }
             returnUrl = returnUrl ?? Url.Content("~/");
+            callbackUrl = callbackUrl ?? Url.Content("https://notvalidurl.com");
 
             var user = await _userManager.FindByEmailAsync(email);
             if (user == null)
@@ -60,8 +61,9 @@ namespace StreamingPlanet.Areas.Identity.Pages.Account
             }
 
             Email = email;
-            // Once you add a real email sender, you should remove this code that lets you confirm the account
-            DisplayConfirmAccountLink = true;
+
+            //True = development, false = production
+            DisplayConfirmAccountLink = false;
             if (DisplayConfirmAccountLink)
             {
                 var userId = await _userManager.GetUserIdAsync(user);
@@ -73,6 +75,12 @@ namespace StreamingPlanet.Areas.Identity.Pages.Account
                     values: new { area = "Identity", userId = userId, code = code, returnUrl = returnUrl },
                     protocol: Request.Scheme);
             }
+            else
+            {
+                string message = "Please confirm your account by clicking <a href=\"" + callbackUrl + "\">here</a>";
+                await _sender.SendEmailAsync(email, "Email Confirmation", message);
+            }
+
 
             return Page();
         }

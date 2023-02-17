@@ -10,5 +10,12 @@ namespace StreamingPlanet.Data
             : base(options)
         {
         }
+
+        public DbSet<CinemaUser> CinemaUsers { get; set; }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+        }
     }
 }

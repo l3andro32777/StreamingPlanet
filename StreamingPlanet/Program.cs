@@ -13,13 +13,14 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlServer(connectionString));
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
-builder.Services.AddDefaultIdentity<CinemaUser>(options => options.SignIn.RequireConfirmedAccount = false)
-    .AddEntityFrameworkStores<ApplicationDbContext>();
-s
-/*builder.Services.AddIdentity<CinemaUser, IdentityRole>()
+//builder.Services.AddDefaultIdentity<CinemaUser>(options => options.SignIn.RequireConfirmedAccount = true)
+//    .AddEntityFrameworkStores<ApplicationDbContext>();
+
+builder.Services.AddIdentity<CinemaUser, IdentityRole>(options => options.SignIn.RequireConfirmedAccount = true)
     .AddEntityFrameworkStores<ApplicationDbContext>()
+    .AddDefaultUI()
     .AddDefaultTokenProviders();
-builder.Services.AddRazorPages();*/
+builder.Services.AddRazorPages();
 
 builder.Services.AddControllersWithViews();
 
@@ -53,7 +54,7 @@ app.MapControllerRoute(
     pattern: "{controller=Home}/{action=Index}/{id?}");
 app.MapRazorPages();
 
-/*using var scope = app.Services.CreateScope();
-await Configurations.CreateRoles(scope.ServiceProvider);*/
+using var scope = app.Services.CreateScope();
+await StreamingPlanet.Configurations.CreateRoles(scope.ServiceProvider);
 
 app.Run();

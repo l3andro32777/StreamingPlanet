@@ -17,7 +17,7 @@ namespace StreamingPlanet
             }
             var manager = new CinemaUser
             {
-                Name = "Conta de Gerente",
+                FullName = "Conta de Gerente",
                 UserName = "manager@ips.pt",
                 Email = "manager@ips.pt"
             };

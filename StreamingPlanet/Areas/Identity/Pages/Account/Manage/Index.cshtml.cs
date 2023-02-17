@@ -53,29 +53,29 @@ namespace StreamingPlanet.Areas.Identity.Pages.Account.Manage
         /// </summary>
         public class InputModel
         {
+            /*
             [Required]
             [DataType(DataType.Text)]
             [Display(Name = "Full name")]
-            public string Name { get; set; }
+            public string Name { get; set; }*/
             /// <summary>
             ///     This API supports the ASP.NET Core Identity default UI infrastructure and is not intended to be used
             ///     directly from your code. This API may change or be removed in future releases.
             /// </summary>
-            [Phone]
-            [Display(Name = "Phone number")]
-            public string PhoneNumber { get; set; }
+
+            [DataType(DataType.Date)]
+            [Display(Name = "Data de nascimento")]
+            public DateTime BirthDate { get; set; }
         }
 
         private async Task LoadAsync(CinemaUser user)
         {
             var userName = await _userManager.GetUserNameAsync(user);
-            var phoneNumber = await _userManager.GetPhoneNumberAsync(user);
-
             Username = userName;
 
             Input = new InputModel
             {
-                PhoneNumber = phoneNumber
+                BirthDate = user.BirthDate
             };
         }
 
@@ -104,7 +104,7 @@ namespace StreamingPlanet.Areas.Identity.Pages.Account.Manage
                 await LoadAsync(user);
                 return Page();
             }
-
+            /*
             var phoneNumber = await _userManager.GetPhoneNumberAsync(user);
             if (Input.PhoneNumber != phoneNumber)
             {
@@ -114,9 +114,12 @@ namespace StreamingPlanet.Areas.Identity.Pages.Account.Manage
                     StatusMessage = "Unexpected error when trying to set phone number.";
                     return RedirectToPage();
                 }
-            }
+            }*/
 
-            await _signInManager.RefreshSignInAsync(user);
+            user.BirthDate = Input.BirthDate;
+            await _userManager.UpdateAsync(user);
+
+            //await _signInManager.RefreshSignInAsync(user);
             StatusMessage = "Your profile has been updated";
             return RedirectToPage();
         }

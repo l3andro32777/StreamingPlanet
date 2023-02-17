@@ -41,7 +41,7 @@ namespace StreamingPlanetTest
             validator.Setup(v => v.ValidateAsync(userManager, It.IsAny<CinemaUser>()))
                 .Returns(Task.FromResult(IdentityResult.Success)).Verifiable();
 
-            var bookUsr = new CinemaUser() { Name = "testeNome", UserName = "testeUsername" };
+            var bookUsr = new CinemaUser() { FullName = "testeNome", UserName = "testeUsername" };
 
             // Act
             var result = await userManager.CreateAsync(bookUsr, "T€ste1");
@@ -71,7 +71,7 @@ namespace StreamingPlanetTest
             validator.Setup(v => v.ValidateAsync(userManager, It.IsAny<CinemaUser>()))
                 .Returns(Task.FromResult(IdentityResult.Success)).Verifiable();
 
-            var bookUsr = new CinemaUser() { Name = "testeNome", UserName = "testeUsername" };
+            var bookUsr = new CinemaUser() { FullName = "testeNome", UserName = "testeUsername" };
 
             // Act
             var result = await userManager.CreateAsync(bookUsr, "teste");
@@ -101,8 +101,8 @@ namespace StreamingPlanetTest
             validator.Setup(v => v.ValidateAsync(userManager, It.IsAny<CinemaUser>()))
                 .Returns(Task.FromResult(IdentityResult.Success)).Verifiable();
 
-            var bookUsr1 = new CinemaUser() { Name = "testeNome", UserName = "testeUsername" };
-            var bookUsr2 = new CinemaUser() { Name = "testeNome", UserName = "testeUsername" };
+            var bookUsr1 = new CinemaUser() { FullName = "testeNome", UserName = "testeUsername" };
+            var bookUsr2 = new CinemaUser() { FullName = "testeNome", UserName = "testeUsername" };
 
             // Act
             await userManager.CreateAsync(bookUsr1, "T€ste1");
@@ -137,7 +137,7 @@ namespace StreamingPlanetTest
                                                             new Mock<ILogger<SignInManager<CinemaUser>>>().Object,
                                                             new Mock<IAuthenticationSchemeProvider>().Object, new Mock<IUserConfirmation<CinemaUser>>().Object);
 
-            var bookUsr = new CinemaUser() { Name = "testeNome", UserName = "teste@teste.com" };
+            var bookUsr = new CinemaUser() { FullName = "testeNome", UserName = "teste@teste.com" };
 
             // Act
             await userManager.CreateAsync(bookUsr, "T€ste1");
@@ -173,7 +173,7 @@ namespace StreamingPlanetTest
                                                             new Mock<ILogger<SignInManager<CinemaUser>>>().Object,
                                                             new Mock<IAuthenticationSchemeProvider>().Object, new Mock<IUserConfirmation<CinemaUser>>().Object);
 
-            var bookUsr = new CinemaUser() { Name = "testeNome", UserName = "teste@teste.com" };
+            var bookUsr = new CinemaUser() { FullName = "testeNome", UserName = "teste@teste.com" };
 
             //Act
             var result = await signInManager.CheckPasswordSignInAsync(bookUsr, "T€ste1", false);
@@ -203,7 +203,7 @@ namespace StreamingPlanetTest
             validator.Setup(v => v.ValidateAsync(userManager, It.IsAny<CinemaUser>()))
                 .Returns(Task.FromResult(IdentityResult.Success)).Verifiable();
 
-            var bookUsr = new CinemaUser() { Name = "testeNome", UserName = "testeUsername" };
+            var bookUsr = new CinemaUser() { FullName = "testeNome", UserName = "testeUsername" };
             var oldPassword = "T€ste1";
             var newPassword = "NewP@ss1";
 

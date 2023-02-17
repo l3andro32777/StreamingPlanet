@@ -1,0 +1,55 @@
+﻿@page
+@model BillingInformationModel
+@{
+    ViewData["Title"] = "Dados de pagamento";
+    ViewData["ActivePage"] = ManageNavPages.BillingInformation;
+}
+
+<h3>@ViewData["Title"]</h3>
+<partial name="_StatusMessage" for="StatusMessage" />
+<form id="fill-billing-information" method="post">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <h4>Billing Information</h4>
+    <div class="form-group">
+        <label asp-for="Input.FullName" class="form-label"></label>
+        <input asp-for="Input.FullName" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Input.CardNumber" class="form-label"></label>
+        <input asp-for="Input.CardNumber" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Input.ExpirationDate" class="form-label"></label>
+        <input asp-for="Input.ExpirationDate" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Input.CCV" class="form-label"></label>
+        <input asp-for="Input.CCV" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Input.Address1" class="form-label"></label>
+        <input asp-for="Input.Address1" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Input.Address2" class="form-label"></label>
+        <input asp-for="Input.Address2" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Input.PostalCode" class="form-label"></label>
+        <input asp-for="Input.PostalCode" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Input.City" class="form-label"></label>
+        <input asp-for="Input.City" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Input.Country" class="form-label"></label>
+        <input asp-for="Input.Country" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Input.PhoneNumber" class="form-label"></label>
+        <input asp-for="Input.PhoneNumber" class="form-control" />
+    </div>
+    <br />
+    <button type="submit" class="w-100 btn btn-lg btn-primary">Atualizar dados</button>
+</form>

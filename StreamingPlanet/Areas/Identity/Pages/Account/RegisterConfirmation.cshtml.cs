@@ -63,7 +63,8 @@ namespace StreamingPlanet.Areas.Identity.Pages.Account
             Email = email;
 
             //True = development, false = production
-            DisplayConfirmAccountLink = false;
+            //TODO: Refactor para usar algo do género app.Environment.IsDevelopment em vez usar um valor hardcoded
+            DisplayConfirmAccountLink = true;
             if (DisplayConfirmAccountLink)
             {
                 var userId = await _userManager.GetUserIdAsync(user);

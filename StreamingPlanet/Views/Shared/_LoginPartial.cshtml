@@ -1,6 +1,7 @@
 ﻿@using Microsoft.AspNetCore.Identity
 @inject SignInManager<CinemaUser> SignInManager
 @inject UserManager<CinemaUser> UserManager
+@inject IHttpContextAccessor _context;
 
 <ul class="navbar-nav">
 @if (SignInManager.IsSignedIn(User))

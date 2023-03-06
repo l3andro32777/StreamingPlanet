@@ -15,7 +15,39 @@ namespace StreamingPlanet.Data
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            List<Guid> CinemaRoomsIds = new List<Guid>() { Guid.NewGuid(), Guid.NewGuid(), Guid.NewGuid(), Guid.NewGuid() };
+
+            modelBuilder.Entity<CinemaRoom>().HasData(
+                    new CinemaRoom
+                    {
+                        Id = CinemaRoomsIds[0],
+                        RoomName = "1A",
+                        MaxCapacity = 12
+                    },
+                    new CinemaRoom
+                    {
+                        Id = CinemaRoomsIds[1],
+                        RoomName = "1B",
+                        MaxCapacity = 12
+                    },
+                    new CinemaRoom
+                    {
+                        Id = CinemaRoomsIds[2],
+                        RoomName = "2A",
+                        MaxCapacity = 12
+                    },
+                    new CinemaRoom
+                    {
+                        Id = CinemaRoomsIds[3],
+                        RoomName = "2B",
+                        MaxCapacity = 12
+                    }
+                );
+
+
             base.OnModelCreating(modelBuilder);
         }
+
+        public DbSet<StreamingPlanet.Models.CinemaRoom> CinemaRoom { get; set; }
     }
 }

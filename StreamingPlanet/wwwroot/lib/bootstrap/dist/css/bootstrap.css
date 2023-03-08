@@ -628,6 +628,9 @@ progress {
   padding-left: var(--bs-gutter-x, 0.75rem);
   margin-right: auto;
   margin-left: auto;
+/*  display: flex;
+  justify-content: center;
+  align-items: center;*/
 }
 
 @media (min-width: 576px) {
@@ -2612,17 +2615,17 @@ textarea.form-control-lg {
   height: calc(3.5rem + 2px);
   line-height: 1.25;
 }
-.form-floating > label {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  padding: 1rem 0.75rem;
-  pointer-events: none;
-  border: 1px solid transparent;
-  transform-origin: 0 0;
-  transition: opacity 0.1s ease-in-out, transform 0.1s ease-in-out;
-}
+    .form-floating > label {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        padding: 1rem 0.75rem;
+        pointer-events: none;
+        border: 1px solid transparent;
+        transform-origin: 0 0;
+        transition: opacity 0.1s ease-in-out, transform 0.1s ease-in-out;
+    }
 @media (prefers-reduced-motion: reduce) {
   .form-floating > label {
     transition: none;

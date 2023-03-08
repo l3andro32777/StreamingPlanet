@@ -76,7 +76,7 @@ namespace StreamingPlanet.Areas.Identity.Pages.Account
             [Required(ErrorMessage = "O campo {0} é obrigatório.")]
             [DataType(DataType.Text)]
             [StringLength(30, ErrorMessage = "O {0} tem que ter pelo menos {2} carateres e no máximo {1}.", MinimumLength = 2)]
-            [Display(Name = "Nome Completo")]
+            [Display(Name = "Nome completo")]
             public string Name { get; set; }
             /// <summary>
             ///     This API supports the ASP.NET Core Identity default UI infrastructure and is not intended to be used

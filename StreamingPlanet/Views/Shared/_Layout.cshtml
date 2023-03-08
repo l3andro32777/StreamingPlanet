@@ -7,7 +7,8 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/StreamingPlanet.styles.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/css/mystyles.css" />
+    <link rel="stylesheet" href="~/css/generalStyles.css" />
+    <link rel="stylesheet" href="~/css/authStyles.css" />
 </head>
 <body>
     <header>
@@ -41,12 +42,12 @@
 
     
 
-    <footer class="@*border-top*@ footer text-muted" >
+    <footer class="@*border-top*@ footer" >
         <div id="popcorn">
             <br />
         </div>
-        <div @*class="container"*@ id="black-back">
-            &copy; 2023 - Streaming Planet - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacidade</a>
+        <div class="@*container*@ link transparent-text" id="black-back">
+            &copy; 2023 - Streaming Planet - <a asp-area="" asp-controller="Home" asp-action="Privacy">Política de Privacidade</a>
         </div>
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>

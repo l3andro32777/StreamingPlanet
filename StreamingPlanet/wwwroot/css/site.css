@@ -16,38 +16,3 @@ html {
 body {
   margin-bottom: 60px;
 }
-
-input[type=email]:focus,
-input[type=password]:focus {
-    box-shadow: 0 0 5px rgba(246, 8, 110,0.8);
-    border: 1px solid rgba(246, 8, 110,0.8);
-}
-
-input.valid:focus {
-    box-shadow: 0 0 5px rgba(8, 246, 110,0.8);
-    border: 1px solid rgba(8, 246, 110,0.8);
-}
-
-.progress {
-    height: 3px !important;
-}
-
-.progress-bar-danger {
-    background-color: #e90f10;
-}
-
-.progress-bar-warning {
-    background-color: #ffad00;
-}
-
-.progress-bar-success {
-    background-color: #02b502;
-}
-
-.fa-circle {
-    font-size: 6px;
-}
-
-.fa-check {
-    color: #02b502;
-}

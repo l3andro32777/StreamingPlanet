@@ -1,7 +1,7 @@
 ﻿@page
 @model IndexModel
 @{
-    ViewData["Title"] = "Perfil";
+    ViewData["Title"] = "Dados pessoais";
     ViewData["ActivePage"] = ManageNavPages.Index;
 }
 
@@ -9,20 +9,21 @@
 <partial name="_StatusMessage" for="StatusMessage" />
 <div class="row">
     <div class="col-md-6">
-        <div class="form-floating">
+        <div class="form-floating" id="field">
             <input asp-for="Username" class="form-control" disabled />
             <label asp-for="Username" class="form-label"></label>
         </div>
         <form id="profile-form" method="post">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             
-            <div class="form-floating">
+            <div class="form-floating" id="field">
                 <input asp-for="Input.BirthDate" type="date" class="form-control" />
                 <label asp-for="Input.BirthDate" class="form-label"></label>
                 <span asp-validation-for="Input.BirthDate" class="text-danger"></span>
             </div>
-            
-            <button id="update-profile-button" type="submit" class="w-100 btn btn-lg btn-primary">Guardar</button>
+            <div id="field">
+                <button id="update-profile-button" type="submit" class="w-100 btn btn-lg btn-primary btn-round my-button">Guardar</button>
+            </div>
         </form>
     </div>
 </div>

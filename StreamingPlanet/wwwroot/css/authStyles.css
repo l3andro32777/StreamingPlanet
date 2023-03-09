@@ -43,3 +43,7 @@ input.valid:focus {
 #field-round {
     border-radius: 100px 100px;
 }
+
+.field-round {
+    border-radius: 100px 100px;
+}

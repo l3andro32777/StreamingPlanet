@@ -7,49 +7,62 @@
 
 <h3>@ViewData["Title"]</h3>
 <partial name="_StatusMessage" for="StatusMessage" />
-<form id="fill-billing-information" method="post">
-    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-    <h4>Billing Information</h4>
-    <div class="form-group">
-        <label asp-for="Input.FullName" class="form-label"></label>
-        <input asp-for="Input.FullName" class="form-control" />
+<div class="row">
+    <div class="col-md-6">
+        <form id="fill-billing-information" method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-floating" id="field">
+                <input asp-for="Input.FullName" class="form-control" />
+                <label asp-for="Input.FullName"></label>
+                <span asp-validation-for="Input.FullName" class="text-danger"></span>
+            </div>
+            <div class="form-floating" id="field">
+                <input asp-for="Input.CardNumber" class="form-control" />
+                <label asp-for="Input.CardNumber"></label>
+                <span asp-validation-for="Input.FullName" class="text-danger"></span>
+            </div>
+            <div class="form-floating" id="field">
+                <input asp-for="Input.ExpirationDate" class="form-control" />
+                <label asp-for="Input.ExpirationDate"></label>
+                <span asp-validation-for="Input.FullName" class="text-danger"></span>
+            </div>
+            <div class="form-floating" id="field">
+                <input asp-for="Input.CCV" class="form-control" />
+                <label asp-for="Input.CCV"></label>
+                <span asp-validation-for="Input.FullName" class="text-danger"></span>
+            </div>
+            <div class="form-floating" id="field">
+                <input asp-for="Input.Address1" class="form-control" />
+                <label asp-for="Input.Address1"></label>
+                <span asp-validation-for="Input.FullName" class="text-danger"></span>
+            </div>
+            <div class="form-floating" id="field">
+                <input asp-for="Input.Address2" class="form-control" />
+                <label asp-for="Input.Address2"></label>
+                <span asp-validation-for="Input.FullName" class="text-danger"></span>
+            </div>
+            <div class="form-floating" id="field">
+                <input asp-for="Input.PostalCode" class="form-control" />
+                <label asp-for="Input.PostalCode"></label>
+                <span asp-validation-for="Input.FullName" class="text-danger"></span>
+            </div>
+            <div class="form-floating" id="field">
+                <input asp-for="Input.City" class="form-control" />
+                <label asp-for="Input.City"></label>
+                <span asp-validation-for="Input.FullName" class="text-danger"></span>
+            </div>
+            <div class="form-floating" id="field">
+                <input asp-for="Input.Country" class="form-control" />
+                <label asp-for="Input.Country"></label>
+                <span asp-validation-for="Input.FullName" class="text-danger"></span>
+            </div>
+            <div class="form-floating" id="field">
+                <input asp-for="Input.PhoneNumber" class="form-control" />
+                <label asp-for="Input.PhoneNumber"></label>
+                <span asp-validation-for="Input.FullName" class="text-danger"></span>
+            </div>
+            <br />
+            <button type="submit" class="w-100 btn btn-lg btn-primary btn-round my-button">Guardar</button>
+        </form>
     </div>
-    <div class="form-group">
-        <label asp-for="Input.CardNumber" class="form-label"></label>
-        <input asp-for="Input.CardNumber" class="form-control" />
-    </div>
-    <div class="form-group">
-        <label asp-for="Input.ExpirationDate" class="form-label"></label>
-        <input asp-for="Input.ExpirationDate" class="form-control" />
-    </div>
-    <div class="form-group">
-        <label asp-for="Input.CCV" class="form-label"></label>
-        <input asp-for="Input.CCV" class="form-control" />
-    </div>
-    <div class="form-group">
-        <label asp-for="Input.Address1" class="form-label"></label>
-        <input asp-for="Input.Address1" class="form-control" />
-    </div>
-    <div class="form-group">
-        <label asp-for="Input.Address2" class="form-label"></label>
-        <input asp-for="Input.Address2" class="form-control" />
-    </div>
-    <div class="form-group">
-        <label asp-for="Input.PostalCode" class="form-label"></label>
-        <input asp-for="Input.PostalCode" class="form-control" />
-    </div>
-    <div class="form-group">
-        <label asp-for="Input.City" class="form-label"></label>
-        <input asp-for="Input.City" class="form-control" />
-    </div>
-    <div class="form-group">
-        <label asp-for="Input.Country" class="form-label"></label>
-        <input asp-for="Input.Country" class="form-control" />
-    </div>
-    <div class="form-group">
-        <label asp-for="Input.PhoneNumber" class="form-label"></label>
-        <input asp-for="Input.PhoneNumber" class="form-control" />
-    </div>
-    <br />
-    <button type="submit" class="w-100 btn btn-lg btn-primary">Atualizar dados</button>
-</form>
+</div>

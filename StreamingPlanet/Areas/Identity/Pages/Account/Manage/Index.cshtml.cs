@@ -31,6 +31,7 @@ namespace StreamingPlanet.Areas.Identity.Pages.Account.Manage
         ///     This API supports the ASP.NET Core Identity default UI infrastructure and is not intended to be used
         ///     directly from your code. This API may change or be removed in future releases.
         /// </summary>
+        [Display(Name = "Nome de utilizador")]
         public string Username { get; set; }
 
         /// <summary>
@@ -120,7 +121,7 @@ namespace StreamingPlanet.Areas.Identity.Pages.Account.Manage
             await _userManager.UpdateAsync(user);
 
             //await _signInManager.RefreshSignInAsync(user);
-            StatusMessage = "Your profile has been updated";
+            StatusMessage = "Os teus dados pessoais foram atualizados.";
             return RedirectToPage();
         }
     }

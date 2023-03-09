@@ -46,7 +46,7 @@ namespace StreamingPlanet.Areas.Identity.Pages.Account.Manage
             ///     directly from your code. This API may change or be removed in future releases.
             /// </summary>
             [Required]
-            [Display(Name = "Nome completo")]
+            [Display(Name = "Nome do titular")]
             public string FullName { get; set; }
 
             /// <summary>
@@ -54,7 +54,7 @@ namespace StreamingPlanet.Areas.Identity.Pages.Account.Manage
             ///     directly from your code. This API may change or be removed in future releases.
             /// </summary>
             [Required]
-            [Display(Name = "Número de cartão de crédito/débito")]
+            [Display(Name = "Número do cartão de crédito/débito")]
             public string CardNumber { get; set; }
 
             /// <summary>
@@ -62,22 +62,23 @@ namespace StreamingPlanet.Areas.Identity.Pages.Account.Manage
             ///     directly from your code. This API may change or be removed in future releases.
             /// </summary>
             [Required]
-            [Display(Name = "Prazo de validade")]
-            public string ExpirationDate { get; set; }
+            [DataType(DataType.Date)]
+            [Display(Name = "Data de validade")]
+            public DateTime ExpirationDate { get; set; }
 
             [Required]
-            [Display(Name = "3 dígitos de segurança")]
+            [Display(Name = "CVV/CVC")]
             public int CCV { get; set; }
 
             [Required]
-            [Display(Name = "Morada 1")]
+            [Display(Name = "Morada")]
             public string Address1 { get; set; }
 
-            [Display(Name = "Morada 2 (opcional)")]
+            [Display(Name = "Morada alternativa (opcional)")]
             public string Address2 { get; set; }
 
             [Required]
-            [Display(Name = "Código Postal")]
+            [Display(Name = "Código postal")]
             public string PostalCode { get; set; }
 
             [Required]
@@ -89,7 +90,7 @@ namespace StreamingPlanet.Areas.Identity.Pages.Account.Manage
             public string Country { get; set; }
 
             [Required]
-            [Display(Name = "Número de Telemóvel")]
+            [Display(Name = "Número de telemóvel")]
             public string PhoneNumber { get; set; }
 
         }

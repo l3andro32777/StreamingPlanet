@@ -62,9 +62,8 @@ namespace StreamingPlanet.Areas.Identity.Pages.Account.Manage
             ///     directly from your code. This API may change or be removed in future releases.
             /// </summary>
             [Required]
-            [DataType(DataType.Date)]
             [Display(Name = "Data de validade")]
-            public DateTime ExpirationDate { get; set; }
+            public string ExpirationDate { get; set; }
 
             [Required]
             [Display(Name = "CVV/CVC")]
@@ -153,7 +152,7 @@ namespace StreamingPlanet.Areas.Identity.Pages.Account.Manage
             await _userManager.UpdateAsync(user);
 
             _logger.LogInformation("User successfully updated their billing information.");
-            StatusMessage = "Dados de pagamento atualizados com sucesso.";
+            StatusMessage = "Os teus dados de pagamento foram atualizados.";
 
             return RedirectToPage();
         }

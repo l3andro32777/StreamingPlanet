@@ -82,3 +82,19 @@
 .my-button:active {
     background-color: #87CEEB;
 }
+
+.my-red-button {
+    background-color: #DC143C;
+    color: #000000;
+    font-size: medium;
+    font-weight: 500;
+    border: none;
+}
+
+.my-red-button:hover {
+    background-color: #EE3E61;
+}
+
+.my-red-button:active {
+    background-color: #EE3E61;
+}

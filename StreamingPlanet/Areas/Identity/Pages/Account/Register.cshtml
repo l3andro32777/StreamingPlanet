@@ -4,10 +4,10 @@
     ViewData["Title"] = "Regista-te";
 }
 
-<div class="container div-padding" id="container">
-    <h1>@ViewData["Title"]</h1>
-    <div class="col-md-4">
+<div class="container" id="container">
+    <div class="div-padding">
         <form id="registerForm" asp-route-returnUrl="@Model.ReturnUrl" method="post">
+            <h1>@ViewData["Title"]</h1>
             <h5 class="link">Ao continuar, concordas com a nossa <a asp-area="" asp-controller="Home" asp-action="Privacy">Política de Privacidade</a>.</h5>
             <hr />
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
@@ -27,11 +27,11 @@
                 <span asp-validation-for="Input.Password" class="text-danger"></span>
             </div>
             <div class="form-floating" id="field">
-                <input asp-for="Input.ConfirmPassword" class="form-control field-round" autocomplete="new-password" aria-required="true" />
+                <input asp-for="Input.ConfirmPassword" class="form-control" autocomplete="new-password" aria-required="true" />
                 <label asp-for="Input.ConfirmPassword"></label>
                 <span asp-validation-for="Input.ConfirmPassword" class="text-danger"></span>
             </div>
-            <div id="popover-password">
+            <div class="text-left" id="popover-password">
                             <p><span id="result"></span></p>
                             <div class="progress">
                                 <div id="password-strength" 

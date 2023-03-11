@@ -49,7 +49,22 @@
 }
 
 .div-padding {
+    width: 100%;
     padding-bottom: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    text-align: center;
+}
+
+/*.my-padding {
+    width: 100%;
+    padding: 0px 30%;
+}*/
+
+.text-left {
+    text-align: left;
 }
 
 .link a {
@@ -76,6 +91,7 @@
 
 .my-button:hover {
     background-color: #87CEEB;
+    /*color: #000000;*/
     /*transition: 0.3s;*/
 }
 

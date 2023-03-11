@@ -12,7 +12,7 @@ using StreamingPlanet.Data;
 namespace StreamingPlanet.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20230308135329_Init")]
+    [Migration("20230311165730_Init")]
     partial class Init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

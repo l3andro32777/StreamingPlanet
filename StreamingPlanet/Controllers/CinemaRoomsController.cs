@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -20,12 +22,14 @@ namespace StreamingPlanet.Controllers
         }
 
         // GET: CinemaRooms
+        [Authorize(Roles = "Dono, Gerente")]
         public async Task<IActionResult> Index()
         {
             return View(await _context.CinemaRoom.ToListAsync());
         }
 
         // GET: CinemaRooms/Details/5
+        [Authorize(Roles = "Dono, Gerente")]
         public async Task<IActionResult> Details(Guid? id)
         {
             if (id == null || _context.CinemaRoom == null)
@@ -44,6 +48,7 @@ namespace StreamingPlanet.Controllers
         }
 
         // GET: CinemaRooms/Create
+        [Authorize(Roles = "Dono, Gerente")]
         public IActionResult Create()
         {
             return View();
@@ -54,6 +59,7 @@ namespace StreamingPlanet.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Dono, Gerente")]
         public async Task<IActionResult> Create([Bind("Id,RoomName,MaxCapacity,IsAvailable")] CinemaRoom cinemaRoom)
         {
             if (ModelState.IsValid)
@@ -67,6 +73,7 @@ namespace StreamingPlanet.Controllers
         }
 
         // GET: CinemaRooms/Edit/5
+        [Authorize(Roles = "Dono, Gerente")]
         public async Task<IActionResult> Edit(Guid? id)
         {
             if (id == null || _context.CinemaRoom == null)
@@ -87,6 +94,7 @@ namespace StreamingPlanet.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Dono, Gerente")]
         public async Task<IActionResult> Edit(Guid id, [Bind("Id,RoomName,MaxCapacity,IsAvailable")] CinemaRoom cinemaRoom)
         {
             if (id != cinemaRoom.Id)
@@ -118,6 +126,7 @@ namespace StreamingPlanet.Controllers
         }
 
         // GET: CinemaRooms/Delete/5
+        [Authorize(Roles = "Dono, Gerente")]
         public async Task<IActionResult> Delete(Guid? id)
         {
             if (id == null || _context.CinemaRoom == null)
@@ -138,6 +147,7 @@ namespace StreamingPlanet.Controllers
         // POST: CinemaRooms/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Dono, Gerente")]
         public async Task<IActionResult> DeleteConfirmed(Guid id)
         {
             if (_context.CinemaRoom == null)

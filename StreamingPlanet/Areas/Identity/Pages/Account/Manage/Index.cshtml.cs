@@ -53,6 +53,7 @@ namespace StreamingPlanet.Areas.Identity.Pages.Account.Manage
         /// </summary>
         public class InputModel
         {
+
             /*
             [Required]
             [DataType(DataType.Text)]
@@ -65,6 +66,8 @@ namespace StreamingPlanet.Areas.Identity.Pages.Account.Manage
 
             [DataType(DataType.Date)]
             [Display(Name = "Data de nascimento")]
+            [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}")]
+
             public DateTime BirthDate { get; set; }
         }
 
@@ -115,13 +118,22 @@ namespace StreamingPlanet.Areas.Identity.Pages.Account.Manage
                     return RedirectToPage();
                 }
             }*/
+            DateTime birthdate = Input.BirthDate;
 
-            user.BirthDate = Input.BirthDate;
-            await _userManager.UpdateAsync(user);
-
+            if (DateTime.Compare(birthdate, DateTime.Now) > 0)
+            {
+                StatusMessage = "Error: Data Inválida!";
+                return RedirectToPage();
+            }
+            else
+            {
+                user.BirthDate = birthdate;
+                await _userManager.UpdateAsync(user);
+                StatusMessage = "Your profile has been updated";
+                return RedirectToPage();
+            }
+       
             //await _signInManager.RefreshSignInAsync(user);
-            StatusMessage = "Your profile has been updated";
-            return RedirectToPage();
         }
     }
 }

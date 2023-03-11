@@ -17,7 +17,7 @@
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             
             <div class="form-floating">
-                <input asp-for="Input.BirthDate" type="date" class="form-control" />
+                <input asp-for="Input.BirthDate" type="date" min="1940-01-01" class="form-control" />
                 <label asp-for="Input.BirthDate" class="form-label"></label>
                 <span asp-validation-for="Input.BirthDate" class="text-danger"></span>
             </div>

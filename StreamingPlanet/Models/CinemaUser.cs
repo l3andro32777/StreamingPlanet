@@ -9,7 +9,7 @@ namespace StreamingPlanet.Models
         //[PersonalData]
         public String? FullName { get; set; }
 
-        public DateTime BirthDate { get; set; }
+        public DateTime BirthDate { get; set; } = new DateTime(1970, 1, 1);
 
         //Payment Information
         //[ProtectedPersonalData]

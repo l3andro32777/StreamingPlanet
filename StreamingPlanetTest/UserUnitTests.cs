@@ -2,12 +2,21 @@ using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Mvc.Testing;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using StreamingPlanet.Data;
 using Moq;
 using StreamingPlanet.Models;
+using StreamingPlanet.Controllers;
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.TestHost;
+using Microsoft.AspNetCore.Builder;
+using System.Net;
+using StreamingPlanet;
+using Microsoft.Extensions.DependencyInjection;
+using System.Net.Http.Headers;
 
 namespace StreamingPlanetTest
 {
